@@ -1,0 +1,1 @@
+# proj-ionic-firebase
