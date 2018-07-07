@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="color-1">
+    <ion-title>Chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button *ngIf="!usuario?.uid" (click)="autenticar()">Autenticar</button>
+  <button ion-button *ngIf="usuario?.uid" (click)="sair()">Sair</button>
+
+  <ion-list *ngIf="usuario?.uid">
+    <ion-item *ngFor="let msg of mensagens">
+      <h1>Usuario: {{msg?.usuario}}</h1>
+      <p>Mensagem: {{msg?.mensagem}}</p>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-label>Mensagem: </ion-label>
+    <ion-input type="text" placeholder="Digite sua mensagem" [(ngModel)]="data.mensagem" (keyup.enter)="enviarMsg()"></ion-input>
+  </ion-item>
+</ion-footer>

@@ -1,0 +1,25 @@
+<ion-content>
+	<form (ngSubmit)="setSala()">
+		<ion-item class="input-create-room">
+			<ion-label floating>Nome da sala</ion-label>
+	    	<ion-input type="text" [(ngModel)]="sala.nomeSala" name="nomeSala"></ion-input>
+	  </ion-item>
+
+	  <ion-item class="input-create-room">
+	  		<ion-label floating>Descrição</ion-label>
+	  		<ion-input type="text" [(ngModel)]="sala.descricao" name="descricao"></ion-input>
+	  </ion-item>
+
+		<ion-item class="input-create-room">
+			<ion-label>Distância</ion-label>
+			<ion-select [(ngModel)]="sala.distancia" name="distancia">
+				<ion-option value="6">6</ion-option>
+				<ion-option value="12">12</ion-option>
+				<ion-option value="18">18</ion-option>
+			</ion-select>
+		</ion-item>
+		<div class="center" text-center>
+			<button ion-button>Criar sala</button>
+		</div>
+	</form>
+</ion-content>

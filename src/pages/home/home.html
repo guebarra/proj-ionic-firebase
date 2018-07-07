@@ -1,0 +1,26 @@
+<ion-content padding>
+	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+	<ion-list>
+		<ion-card *ngFor="let item of salas">
+			<div class="maps"></div>
+
+			<ion-item>
+				<div item-left class="img-card"></div>
+				<div class="text-card">
+					<h2>{{item.nomeSala}}</h2>
+					<p>{{item.descricao}}</p>
+				</div>
+			</ion-item>
+
+			<ion-item>
+				<ion-icon name="ios-pin" item-start small></ion-icon>
+				<span item-left class="dist-card">{{item.distancia}}km</span>
+				<button ion-button icon-left clear item-end (click)="pushChatPage(item)">
+					<ion-icon name="ios-send-outline"></ion-icon>
+					<p>Entrar</p>
+				</button>
+			</ion-item>
+
+		</ion-card>
+	</ion-list>
+</ion-content>
